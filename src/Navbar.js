@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Slider from 'rc-slider';
 import "rc-slider/assets/index.css";
 import './Navbar.css';
-
+import {Link} from 'react-router-dom';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 
@@ -33,7 +33,7 @@ class NavBar extends Component{
         return(
             <header className="Navbar">
                 <div className="logo">
-                    <a href="#">Aniket Color Picker</a>
+                    <Link to="/">Aniket Color Picker</Link>
                 </div>
                 <div className="slider-container">
                     <span>Level : {this.props.level}</span>
