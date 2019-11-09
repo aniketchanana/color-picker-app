@@ -6,17 +6,28 @@ import './Navbar.css';
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
 
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+
 class NavBar extends Component{
     constructor(props){
         super(props);
-        this.state = {format:"hex"};
+        this.state = {format:"hex",open:false};
         this.handelChange = this.handelChange.bind(this);
+        this.closeSnackBar = this.closeSnackBar.bind(this);
     }
     async handelChange(evt){
         await this.setState({
-            format:evt.target.value
+            format:evt.target.value,
+            open:true
         })
         this.props.handelChange(this.state.format);
+    }
+    closeSnackBar(){
+        this.setState({
+            open:false
+        })
     }
     render(){
         return(
@@ -43,9 +54,33 @@ class NavBar extends Component{
                 onChange={this.handelChange}>
                     <MenuItem value='hex'>HEX - #ffffff</MenuItem>
                     <MenuItem value='rgb'>RGB - rgb(255,255,255)</MenuItem>
-                    <MenuItem value='rgba'>RGBA - rgbA(255,255,255,1.0)</MenuItem>
+                    <MenuItem value='rgba'>RGBA - rgba(255,255,255,1.0)</MenuItem>
                 </Select>
                 </div>
+
+                <Snackbar
+                anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+                }}
+                open={this.state.open}
+                autoHideDuration={2000}
+                onClose={this.closeSnackBar}
+                ContentProps={{
+                'aria-describedby': 'message-id',
+                }}
+                message={<span id="message-id">Format changed to {this.state.format.toUpperCase()}</span>}
+                action={[
+                <IconButton
+                    key="close"
+                    aria-label="close"
+                    color="inherit"
+                    onClick={this.closeSnackBar}
+                >
+                    <CloseIcon />
+                </IconButton>,
+                ]}
+            />
             </header>
         )
     }
