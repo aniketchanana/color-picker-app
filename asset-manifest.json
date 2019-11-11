@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/color-picker/static/css/main.6e551f17.chunk.css",
-    "main.js": "/color-picker/static/js/main.e8faf48f.chunk.js",
-    "main.js.map": "/color-picker/static/js/main.e8faf48f.chunk.js.map",
-    "runtime-main.js": "/color-picker/static/js/runtime-main.46dfbd1e.js",
-    "runtime-main.js.map": "/color-picker/static/js/runtime-main.46dfbd1e.js.map",
-    "static/css/2.96479aa2.chunk.css": "/color-picker/static/css/2.96479aa2.chunk.css",
-    "static/js/2.5c2786ce.chunk.js": "/color-picker/static/js/2.5c2786ce.chunk.js",
-    "static/js/2.5c2786ce.chunk.js.map": "/color-picker/static/js/2.5c2786ce.chunk.js.map",
-    "index.html": "/color-picker/index.html",
-    "precache-manifest.4f3ca5b75ab5a672d180edee7492124a.js": "/color-picker/precache-manifest.4f3ca5b75ab5a672d180edee7492124a.js",
-    "service-worker.js": "/color-picker/service-worker.js",
-    "static/css/2.96479aa2.chunk.css.map": "/color-picker/static/css/2.96479aa2.chunk.css.map",
-    "static/css/main.6e551f17.chunk.css.map": "/color-picker/static/css/main.6e551f17.chunk.css.map"
+    "main.css": "/color-picker-app/static/css/main.6e551f17.chunk.css",
+    "main.js": "/color-picker-app/static/js/main.7cc9f746.chunk.js",
+    "main.js.map": "/color-picker-app/static/js/main.7cc9f746.chunk.js.map",
+    "runtime-main.js": "/color-picker-app/static/js/runtime-main.e0223a3f.js",
+    "runtime-main.js.map": "/color-picker-app/static/js/runtime-main.e0223a3f.js.map",
+    "static/css/2.96479aa2.chunk.css": "/color-picker-app/static/css/2.96479aa2.chunk.css",
+    "static/js/2.5c2786ce.chunk.js": "/color-picker-app/static/js/2.5c2786ce.chunk.js",
+    "static/js/2.5c2786ce.chunk.js.map": "/color-picker-app/static/js/2.5c2786ce.chunk.js.map",
+    "index.html": "/color-picker-app/index.html",
+    "precache-manifest.837748d8c76e224c0024379da7e06975.js": "/color-picker-app/precache-manifest.837748d8c76e224c0024379da7e06975.js",
+    "service-worker.js": "/color-picker-app/service-worker.js",
+    "static/css/2.96479aa2.chunk.css.map": "/color-picker-app/static/css/2.96479aa2.chunk.css.map",
+    "static/css/main.6e551f17.chunk.css.map": "/color-picker-app/static/css/main.6e551f17.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.46dfbd1e.js",
+    "static/js/runtime-main.e0223a3f.js",
     "static/css/2.96479aa2.chunk.css",
     "static/js/2.5c2786ce.chunk.js",
     "static/css/main.6e551f17.chunk.css",
-    "static/js/main.e8faf48f.chunk.js"
+    "static/js/main.7cc9f746.chunk.js"
   ]
 }
