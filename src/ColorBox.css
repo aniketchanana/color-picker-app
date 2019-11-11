@@ -39,7 +39,7 @@
 }
 
 a{
-    color: black;
+    color: white;
     text-decoration: none;
 }
 .GoBack .copy-button{
@@ -59,6 +59,13 @@ a{
     font-size: 12px;
 }
 
+.lighttext{
+    color: white;
+}
+
+.ColorBox .darktext{
+    color: rgba(0,0,0,0.8);
+}
 .see-more{
     background: rgba(255,255,255,0.3);
     position: absolute;
