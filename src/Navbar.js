@@ -11,6 +11,9 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 
 class NavBar extends Component{
+    static defaultProps = {
+        show:true
+    }
     constructor(props){
         super(props);
         this.state = {format:"hex",open:false};
@@ -35,7 +38,7 @@ class NavBar extends Component{
                 <div className="logo">
                     <Link to="/">Aniket Color Picker</Link>
                 </div>
-                <div className="slider-container">
+                {this.props.show && <div className="slider-container">
                     <span>Level : {this.props.level}</span>
                     <div className="slider">
                         <Slider 
@@ -46,7 +49,7 @@ class NavBar extends Component{
                         onAfterChange={this.props.changeLevel}
                         ></Slider>
                     </div>
-                </div>
+                </div>}
 
                 <div className="select-container">
                 <Select

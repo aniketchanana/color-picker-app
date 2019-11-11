@@ -8,6 +8,14 @@
     margin-bottom: -4px;
 }
 
+.SingleColorPalette .ColorBox{
+    height: 50%;
+}
+
+.ColorBox.GoBack{
+    background-color: #000;
+    cursor: pointer;
+}
 .copy-button{
     width: 100px;
     height: 30px;
@@ -27,6 +35,15 @@
 }
 
 .ColorBox:hover .copy-button{
+    opacity: 1;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+.GoBack .copy-button{
+    background: rgba(255,255,255,0.5);
     opacity: 1;
 }
 
