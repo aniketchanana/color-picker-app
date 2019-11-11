@@ -2,7 +2,7 @@
   "name": "color-picker",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://aniketchanana.me/color-picker",
+  "homepage": "http://aniketchanana.me/color-picker-app",
   "dependencies": {
     "@material-ui/core": "^4.6.0",
     "@material-ui/icons": "^4.5.1",
