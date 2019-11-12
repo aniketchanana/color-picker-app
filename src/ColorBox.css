@@ -105,6 +105,6 @@ a{
     text-align: center;
 }
 .copymsg p{
-    color: white;
+    /* color: white; */
     font-size: 2rem;
 }
