@@ -11,6 +11,45 @@ const styles = {
     },
     colorName:{
         color:(props)=> Chroma(props.background).luminance() <= 0.08 ? "white" : "black"
+    },
+    seeMore:{
+        background: "rgba(255,255,255,0.3)",
+        position: "absolute",
+        right: "0",
+        bottom: "0",
+        padding: "4px",
+        textTransform: "uppercase",
+        color:(props)=> Chroma(props.background).luminance() >= 0.4 ? "black" : "white",
+    },
+    ColorBox:{
+        width: "20%",
+        height: (props)=>{return props.showMoreBtn?"25%":"50%"},
+        margin: "0 auto",
+        display: "inline-block",
+        position: "relative",
+        cursor: "pointer",
+        marginBottom: "-4px",
+        "&:hover button":{
+            opacity:"1"
+        }
+    },
+    copyButton:{
+        color:(props)=> Chroma(props.background).luminance() >= 0.4 ? "black" : "white",
+        width: "100px",
+        height: "30px",
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        marginLeft: "-50px",
+        marginTop: "-15px",
+        textAlign: "center",
+        outline: "none",
+        background: "rgba(255,255,255,0.3)",
+        lineHeight: "30px",
+        texTransform: "uppercase",
+        border: "none",
+        opacity: "0",
+        transition: "0.5s ease"
     }
 }
 class ColorBox extends Component{
@@ -35,7 +74,7 @@ class ColorBox extends Component{
         
         return(
             <CopyToClipboard text={background} onCopy={this.changeCopyState}>
-                <div className={"ColorBox"} style={{background:background}}>
+                <div className={classes.ColorBox} style={{background:background}}>
                 <div className={`copy-overlay ${copied && "show"}`} style={{background:background}}>
                     <div className="copymsg">
                     <h1 className={`overaly-text ${classes.copyText}`}>copied!!</h1>
@@ -46,9 +85,9 @@ class ColorBox extends Component{
                     <div className="box-content">
                         <span className={classes.colorName}>{name}</span>
                     </div>
-                    <button className={`copy-button ${classes.copyText}`}>Copy</button>
+                    <button className={classes.copyButton}>Copy</button>
                 </div> 
-                {this.props.showMoreBtn && <Link to={`/palette/${paletteid}/${id}`} onClick={(e)=>{e.stopPropagation()}}><span className={"see-more "+ (classes.copyText)}>More</span></Link>}
+                {this.props.showMoreBtn && <Link to={`/palette/${paletteid}/${id}`} onClick={(e)=>{e.stopPropagation()}}><span className={classes.seeMore}>More</span></Link>}
                 </div>
             </CopyToClipboard>
         )
