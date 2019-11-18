@@ -1,0 +1,41 @@
+export default {
+    root:{
+        backgroundColor:"white",
+        borderRadius:"5px",
+        overflow:"hidden",
+        "&:hover":{
+            cursor:"pointer"
+        },
+        width:"28%",
+        padding:"1rem",
+        margin:"1rem"
+    },
+    colors:{
+        backgroundColor:"#dae1e4",
+        width:"100%",
+        height:"150px",
+        // border:"2px solid black"
+    },
+    title:{
+        display:"flex",
+        justifyContent:"space-between",
+        alignItems:"center",
+        margin:"0",
+        color:"black",
+        paddingTop:"0.5rem",
+        fontSize:"1rem",
+        position:"relative"
+    },
+    emoji:{
+        marginLeft:"0.5rem",
+        marginRight:"1rem",
+        fontSize:"1.5rem"
+    },
+    miniColor:{
+        height:"25%",
+        width:"20%",
+        display:"inline-block",
+        marginBottom:"-4px"
+    },
+    
+};

@@ -1,27 +1,8 @@
 import React, { Component } from 'react';
 import {withStyles} from '@material-ui/styles';
 import MiniPalette from "./MiniPalette";
-const styles = {
-    root:{
-        backgroundColor:"blue",
-        height:"100%",
-        display:"flex",
-        justifyContent:"center",
-        alignItems:"center"
-    },
-    container:{
-        width:"80%",
-    },
-    nav:{
-        width:"100%",
-        color:"white",
-        margin:"1rem"
-    },
-    palettes:{
-        display:"flex",
-        flexWrap:"wrap",
-    }
-}
+import styles from './Styles/PaletteListStyle';
+import {Link} from "react-router-dom";
 class PaletteList extends Component {
     constructor(){
         super();
@@ -36,7 +17,8 @@ class PaletteList extends Component {
             <div className={classes.root}>
                 <div className={classes.container}>
                     <nav className={classes.nav}>
-                    <h1>Color Palettes</h1>
+                        <h1>Color Palettes</h1>
+                        <Link to="/palette/new">Create Palette</Link>
                     </nav>
                     <div className={classes.palettes}>
                         {palettes.map((palette)=>{
