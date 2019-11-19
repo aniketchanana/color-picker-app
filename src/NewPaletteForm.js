@@ -83,22 +83,33 @@ class NewPaletteForm extends Component {
     this.state = {
       open:true,
       currentColor:"teal",
-      newName:"",
+      newColorName:"",
+      newPaletteName:"",
       colors:[{color:"blue",name:"blue"}]
     }
     this.updateCurrentColor = this.updateCurrentColor.bind(this);
     this.addNewColor = this.addNewColor.bind(this);
     this.handelChange = this.handelChange.bind(this);
+    this.handelSubmit = this.handelSubmit.bind(this);
   }
-
+  handelSubmit(){
+    let newName = this.state.newPaletteName
+    const newPalette = {
+      paletteName:newName,
+      id:newName.toLowerCase().replace(/ /g,"-"),
+      colors:this.state.colors
+    }
+    this.props.savePalette(newPalette);
+    this.props.history.push("/");
+  }
   addNewColor(){
     const newColor = {
       color:this.state.currentColor,
-      name:this.state.newName
+      name:this.state.newColorName
     }
     this.setState({
       colors:[...this.state.colors,newColor],
-      newName:""
+      newColorName:""
     })
   }
 
@@ -116,16 +127,27 @@ class NewPaletteForm extends Component {
     })
   }
   componentDidMount(){
+    console.log(this.props.palettes);
     ValidatorForm.addValidationRule('isColorNameUnique',(value)=>{
       return  this.state.colors.every(({name})=> name.toLowerCase() !== value.toLowerCase());
     })
     ValidatorForm.addValidationRule('isColorUnique',(value)=>{
       return  this.state.colors.every(({color})=> color.toLowerCase() !== this.state.currentColor.toLowerCase());
     })
+    ValidatorForm.addValidationRule("isPaletteNameUnique",(value)=>{
+      return this.props.palettes.every(({paletteName})=> paletteName.toLowerCase() !== value.toLowerCase())
+    })
+
   }
   handelChange(evt){
     this.setState({
-      newName:evt.target.value
+      [evt.target.name]:evt.target.value
+    })
+  }
+
+  deleteColor(colorName){
+    this.setState({
+      colors:this.state.colors.filter(color => color.name !== colorName)
     })
   }
   render() {
@@ -137,6 +159,7 @@ class NewPaletteForm extends Component {
         <CssBaseline />
         <AppBar
           position='fixed'
+          color="default"
           className={classNames(classes.appBar, {
             [classes.appBarShift]: open
           })}
@@ -153,6 +176,27 @@ class NewPaletteForm extends Component {
             <Typography variant='h6' color='inherit' noWrap>
               Persistent drawer
             </Typography>
+
+            <ValidatorForm
+            onSubmit={this.handelSubmit}
+            >
+              <TextValidator 
+              label="Palette Name"
+              value={this.state.newPaletteName}
+              name="newPaletteName"
+              onChange={this.handelChange}
+              validators={["required","isPaletteNameUnique"]}
+              errorMessages={["Enter Palette Name","palette name taken"]}
+              ></TextValidator>
+
+              <Button 
+              variant="contained" 
+              color="primary"
+              type="submit"
+              >Save Palette</Button>
+
+            </ValidatorForm>
+
           </Toolbar>
         </AppBar>
         <Drawer
@@ -185,8 +229,11 @@ class NewPaletteForm extends Component {
           />
           <ValidatorForm
           onSubmit={this.addNewColor}>
+
             <TextValidator
-            value={this.state.newName}
+            name="newColorName"
+            label="Enter color name"
+            value={this.state.newColorName}
             onChange={this.handelChange}
             validators={['required','isColorNameUnique','isColorUnique']}
             errorMessages={['this field is required', 'Color should be unique in palette','color should be unique']}
@@ -211,7 +258,11 @@ class NewPaletteForm extends Component {
         > 
         <div className={classes.drawerHeader} />
           {this.state.colors.map((color)=>{
-            return <DragableColorBox name={color.name} color={color.color}></DragableColorBox>
+            return <DragableColorBox 
+            key={color.name}
+            handelClick={()=> this.deleteColor(color.name)}
+            name={color.name} 
+            color={color.color}></DragableColorBox>
           })}
         </main>
       </div>
