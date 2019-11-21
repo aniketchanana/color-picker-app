@@ -6,7 +6,9 @@
     "@material-ui/core": "^4.6.0",
     "@material-ui/icons": "^4.5.1",
     "@material-ui/styles": "^4.6.0",
+    "array-move": "^2.2.0",
     "chroma-js": "^2.1.0",
+    "emoji-mart": "^2.11.1",
     "gh-pages": "^2.1.1",
     "rc-slider": "^8.7.1",
     "react": "^16.11.0",
@@ -15,7 +17,8 @@
     "react-dom": "^16.11.0",
     "react-material-ui-form-validator": "^2.0.9",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "react-sortable-hoc": "^1.10.1"
   },
   "scripts": {
     "start": "react-scripts start",
