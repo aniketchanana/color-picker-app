@@ -32,6 +32,7 @@
     justify-content: flex-start;
     align-items: center;
     height: 6vh;
+    background-color: white;
 }
 
 .logo{
@@ -62,9 +63,10 @@
     }
     .slider-container,.slider{
         display: block;
-        width: 150px;
+        width: 100px;
         margin-left: 0px;
         margin-top: 0px;
+        background-color: white;
     }
     .slider-container{
         margin-left: 20px;

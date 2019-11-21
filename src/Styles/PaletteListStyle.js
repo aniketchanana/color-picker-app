@@ -1,10 +1,13 @@
+import bg from '../bg.svg';
 export default {
     root:{
-        backgroundColor:"blue",
         height:"100%",
         display:"flex",
         justifyContent:"center",
-        alignItems:"center"
+        alignItems:"center",
+        backgroundColor:"red",
+        backgroundImage:`url(${bg})`,
+        // overflow:"scroll"
     },
     container:{
         width:"70%"
@@ -22,7 +25,11 @@ export default {
         }
     },
     palettes:{
-        display:"flex",
-        flexWrap:"wrap",
+        // display:"flex",
+        // flexDirection: "row",
+        // justifyContent:"space-between",
+        // alignItems:"center",
+        // border:"1px solid white",
+        // flexWrap:"wrap",
     }
 }

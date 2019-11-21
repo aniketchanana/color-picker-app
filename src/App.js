@@ -67,7 +67,7 @@ class App extends Component{
 
           <Redirect to="/"></Redirect>
         </Switch>
-      </div>
+        </div>
     )
   }
 }

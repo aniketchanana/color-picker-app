@@ -8,12 +8,16 @@ export default {
         "&:hover svg":{
             opacity:"1"
         },
+        display:"inline-block",
         width:"28%",
         padding:"1rem",
         margin:"0.7rem",
         position:"relative",
         [sizes.down("md")]:{
-            width:"60%"
+            display:"block",
+            width:"60%",
+            margin:"0px",
+            marginBottom:"1.5rem"
         },
         [sizes.down("xs")]:{
             width:"100%"
