@@ -7,7 +7,7 @@ export default {
         alignItems:"center"
     },
     container:{
-        width:"80%",
+        width:"70%"
     },
     nav:{
         width:"97%",

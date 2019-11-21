@@ -55,3 +55,18 @@
     margin-left: auto;
     margin-right: 1rem;
 }
+
+@media (max-width:650px){
+    .logo{
+        display: none;
+    }
+    .slider-container,.slider{
+        display: block;
+        width: 150px;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    .slider-container{
+        margin-left: 20px;
+    }
+}

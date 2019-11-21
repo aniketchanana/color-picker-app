@@ -10,46 +10,8 @@ import MenuIcon from "@material-ui/icons/Menu";
 import Button from "@material-ui/core/Button";
 import {Link} from "react-router-dom";
 import PaletteMetaForm from './PaletteMetaForm';
-const drawerWidth = 350;
-const styles = theme => ({
-  root:{
-    display:"flex"
-  },
-  appBar: {
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen
-    }),
-    flexDirection:"row",
-    justifyContent:"space-between",
-    alignItems:"center",
-    height:"64px"
-  },
-  appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
-    transition: theme.transitions.create(["margin", "width"], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen
-    })
-  },
-  menuButton: {
-    marginLeft: 12,
-    marginRight: 20
-  },
-  navBtns:{
-    marginRight:"1rem",
-    "& a":{
-      textDecoration:"none",
-      width:"300px"
-    },
-    display:"flex",
-    justifyContent:"center"
-  },
-  button:{
-    width:"200px"
-  }
-})
+import styles from './Styles/PaletteFormNavStyles';
+
 class PaletteFormNav extends Component{
   constructor(props){
     super(props);

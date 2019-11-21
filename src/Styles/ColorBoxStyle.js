@@ -1,5 +1,6 @@
 import Chroma from 'chroma-js';
-export default {
+import sizes from './sizes';
+const mystyles = {
     copyText:{
         color:(props)=> Chroma(props.background).luminance() >= 0.7 ? "black" : "white",
     },
@@ -25,7 +26,20 @@ export default {
         marginBottom: "-4px",
         "&:hover button":{
             opacity:"1"
+        },
+        [sizes.down("lg")]:{
+            width:"25%",
+            height: (props)=>{return props.showMoreBtn?"20%":"33.333%"}
+        },
+        [sizes.down("md")]:{
+            width:"50%",
+            height: (props)=>{return props.showMoreBtn?"10%":"20%"}
+        },
+        [sizes.down("xs")]:{
+            width:"100%",
+            height: (props)=>{return props.showMoreBtn?"5%":"10%"
         }
+    }
     },
     copyButton:{
         color:(props)=> Chroma(props.background).luminance() >= 0.4 ? "black" : "white",
@@ -80,6 +94,9 @@ export default {
         textTransform: "uppercase",
         marginTop: "18%",
         color:(props)=> Chroma(props.background).luminance() >= 0.7 ? "black" : "white",
+        [sizes.down("xs")]:{
+            fontSize:"2rem"
+        }
     },
     copymsg:{
         textAlign: "center",
@@ -88,3 +105,6 @@ export default {
         }
     }     
 }
+
+console.log(mystyles);
+export default mystyles;
