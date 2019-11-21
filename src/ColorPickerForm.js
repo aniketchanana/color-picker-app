@@ -43,7 +43,7 @@ class ColorPickerForm extends Component {
           return  this.props.colors.every(({name})=> name.toLowerCase() !== value.toLowerCase());
         })
         ValidatorForm.addValidationRule('isColorUnique',(value)=>{
-          // console.log(this.props);
+          console.log(this.state.currentColor);
           return  this.props.colors.every(({color})=> color.toLowerCase() !== this.state.currentColor.toLowerCase());
         })
       }
@@ -58,7 +58,8 @@ class ColorPickerForm extends Component {
             onChangeComplete={newColor => this.updateCurrentColor(newColor)}
           />
           <ValidatorForm
-          onSubmit={this.handelSubmit}>
+          onSubmit={this.handelSubmit}
+          instantValidate={false}>
 
             <TextValidator
             margin="normal"

@@ -66,6 +66,8 @@ class App extends Component{
           ></SingleColorPalette>}}></Route>
 
           <Redirect to="/"></Redirect>
+          <Route 
+          render={(routeProps)=>{return <PaletteList {...routeProps} palettes={this.state.palette} deletePalette={this.deletePalette}/>  }}></Route>
         </Switch>
         </div>
     )

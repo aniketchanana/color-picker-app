@@ -13,8 +13,7 @@ import arrayMove from "array-move";
 import PaletteFormNav from './PaletteFormNav';
 import ColorPickerForm from './ColorPickerForm';
 import styles from './Styles/NewPaletteformstyles'
-// const drawerWidth = 350;
-
+import seedColors from './seedColor';
 class NewPaletteForm extends Component {
 
   constructor(props)
@@ -22,7 +21,7 @@ class NewPaletteForm extends Component {
     super(props);
     this.state = {
       open:true,
-      colors:[...this.props.palettes[0].colors],
+      colors:[...seedColors[0].colors],
       currentColor:"teal",
       newColorName:""
     }
@@ -42,6 +41,13 @@ class NewPaletteForm extends Component {
     const allcolors = this.props.palettes.map(p=>p.colors).flat();
     var rand = Math.floor(Math.random() * allcolors.length);
     let randomColor = allcolors[rand];
+    let isDuplicate = true;
+    while(isDuplicate)
+    {
+      rand = Math.floor(Math.random() * allcolors.length);
+      let randomColor = allcolors[rand];
+      isDuplicate = this.state.colors.some(color => color.name === randomColor.name)
+    }
     this.setState({
       colors:[...this.state.colors,randomColor]
     })
